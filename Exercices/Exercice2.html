@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #rectangle {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      transition: background-color 0.5s;
+      margin-left: 100px;
+   
+    }
+   
+  </style>
+  <title>Button Actions</title>
+</head>
+<body>
+
+
+  <button onclick="Augmente()">Augmenter Hauteur</button>
+  <button onclick="CouleurVerte()">Mettre en Vert</button>
+  <button onclick="Reset()">Réinitialiser Couleurs</button>
+  <button onclick="Enlever()">Cacher Rectangle</button>
+  <button onclick="Remet()">Afficher Rectangle</button>
+
+  <div id="rectangle"></div>
+  <script>
+    const rectangle = document.getElementById('rectangle');
+
+    function Augmente() {
+      let currentHeight = rectangle.clientHeight;
+      let newHeight = currentHeight + 10;
+      rectangle.style.height = (newHeight > 300) ? '100px' : `${newHeight}px`;
+    }
+
+    function CouleurVerte() {
+      rectangle.style.backgroundColor = 'green';
+    }
+
+    function Reset() {
+      rectangle.style.backgroundColor = 'blue';
+    }
+
+    function Enlever() {
+      rectangle.style.display = 'none';
+    }
+
+    function Remet() {
+      rectangle.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
